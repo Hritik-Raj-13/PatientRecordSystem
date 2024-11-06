@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Record Entry</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS for Nude Theme -->
+    <style>
+        /* Soft nude background */
+        body {
+            background: linear-gradient(135deg, #f3eac2, #e2d5b7);
+            color: #3e3e3e;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Form container styling */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            margin-top: 2rem;
+        }
+
+        /* Heading styling */
+        .form-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #6d5d4b;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Button styling */
+        .btn-submit {
+            background-color: #d8b894;
+            color: #3e3e3e;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #c8a885;
+            color: #fff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+<div class="container d-flex justify-content-center">
+    <div class="form-container text-center">
+        <!-- Form Heading -->
+        <h1 class="form-heading mb-4">Enter Patient Details</h1>
+
+        <!-- Patient Details Form -->
+        <form th:action="@{/patients/created}" th:object="${Patient}" method="post">
+
+            <!-- Name Field -->
+            <div class="form-group text-left">
+                <label for="name">Patient Name</label>
+                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Enter patient name" required>
+            </div>
+
+            <!-- Age Field -->
+            <div class="form-group text-left">
+                <label for="age">Age</label>
+                <input type="number" th:field="*{age}" class="form-control" id="age" placeholder="Enter patient age" required>
+            </div>
+
+            <!-- Gender Field (Dropdown) -->
+            <div class="form-group text-left">
+                <label for="gender">Gender</label>
+                <select th:field="*{gender}" class="form-control" id="gender" required>
+                    <option value="" disabled selected>Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Medical History Field -->
+            <div class="form-group text-left">
+                <label for="medicalHistory">Medical History</label>
+                <textarea th:field="*{medicalHistory}" class="form-control" id="medicalHistory" placeholder="Enter medical history" rows="3" required></textarea>
+            </div>
+
+            <!-- Diagnosis Field -->
+            <div class="form-group text-left">
+                <label for="diagnosis">Diagnosis</label>
+                <textarea th:field="*{diagnosis}" class="form-control" id="diagnosis" placeholder="Enter diagnosis details" rows="3" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-submit mt-3">Save Patient Record</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

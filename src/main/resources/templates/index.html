@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Record System</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS for Nude Theme -->
+  <style>
+    body {
+        background: linear-gradient(135deg, #f3eac2, #e2d5b7);
+        color: #3e3e3e;
+        font-family: Arial, sans-serif;
+    }
+
+    .main-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .main-heading {
+        font-size: 2.8rem;
+        font-weight: bold;
+        color: #6d5d4b;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: #8b7d6b;
+        margin-top: 0.5rem;
+    }
+
+    .btn-custom {
+        background-color: #d8b894;
+        color: #3e3e3e;
+        padding: 0.75rem 2rem;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .btn-custom:hover {
+        background-color: #c8a885;
+        color: #fff;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="main-container text-center">
+    <h1 class="main-heading">Patient Record System</h1>
+    <p class="subtitle">Secure and Efficient Management of Patient Data</p>
+
+    <!-- Four buttons with custom styling for different actions -->
+    <a th:href="@{/patients/create}" class="btn btn-custom mt-4">Patient Entry</a>
+    <a th:href="@{/h2-console}" class="btn btn-custom mt-3">Patient Record (View)</a>
+    <a th:href="@{/patients/delete}" class="btn btn-custom mt-3">Delete Patient</a>
+    <a th:href="@{/patients/update}" class="btn btn-custom mt-3">Update Record</a>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

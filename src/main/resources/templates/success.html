@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS for Nude Theme -->
+  <style>
+    body {
+        background: linear-gradient(135deg, #f3eac2, #e2d5b7);
+        color: #3e3e3e;
+        font-family: Arial, sans-serif;
+    }
+
+    .success-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 3rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        max-width: 600px;
+        margin-top: 5rem;
+        text-align: center;
+    }
+
+    .success-message {
+        font-size: 2rem;
+        color: #4CAF50;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .checkmark {
+        width: 100px;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-option {
+        background-color: #d8b894;
+        color: #3e3e3e;
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 50px;
+        margin: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-option:hover {
+        background-color: #c8a885;
+        color: #fff;
+        transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container d-flex justify-content-center">
+  <div class="success-container">
+    <!-- Success Checkmark -->
+    <img src="https://www.pngall.com/wp-content/uploads/9/Green-Tick-Vector-PNG-Images.png" alt="Success" class="checkmark">
+
+    <!-- Success Message -->
+    <p class="success-message">Record Saved Successfully!</p>
+
+    <!-- Navigation Buttons -->
+    <a th:href="@{/}" class="btn btn-option">Home</a>
+    <a th:href="@{/patients/create}" class="btn btn-option">Another Entry</a>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
